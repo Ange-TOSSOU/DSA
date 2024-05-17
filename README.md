@@ -1,5 +1,5 @@
 # Data Structures Easy to Advanced Course
-This is a full free tutorial from freeCodeCamp.org, given by a Google Engineer, William Fiset. You will find it [here][mooc_material] on their Youtube channel.
+This is a full free tutorial from [freeCodeCamp.org][freeCodeCamp_link], given by a Google Engineer, William Fiset. You will find it [here][mooc_material] on their Youtube channel.
 
 I created this repository to store all my implementations for this tutorial. Feel free to take a look and give me your feedback.
 
@@ -9,5 +9,6 @@ The course is split up into multiple parts.
 
 
 [mooc_material]: https://www.youtube.com/watch?v=RBSGKlAvoiM&list=PLUzvZMEoR0KvEthotRQR3qoJ5FJxkhvaP
+[freeCodeCamp_link]: https://www.youtube.com/@freecodecamp
 
 
