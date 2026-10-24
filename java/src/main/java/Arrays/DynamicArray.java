@@ -116,10 +116,13 @@ public class DynamicArray<T> implements Iterable<T> {
     @Override public java.util.Iterator <T> iterator () {
         return new java.util.Iterator <T> () {
             int index = 0;
+
+            @Override
             public boolean hasNext() {
                 return index < len;
             }
 
+            @Override
             public T next() {
                 return array[index++];
             }
@@ -134,9 +137,9 @@ public class DynamicArray<T> implements Iterable<T> {
         StringBuilder sb = new StringBuilder(len);
         sb.append("[");
         for (int i = 0; i < len - 1; i++) {
-            sb.append(array[i]).append(", ");
+            sb.append(array[i].toString()).append(", ");
         }
-        sb.append(array[len - 1]).append("]");
+        sb.append(array[len - 1].toString()).append("]");
 
         return sb.toString();
     }
