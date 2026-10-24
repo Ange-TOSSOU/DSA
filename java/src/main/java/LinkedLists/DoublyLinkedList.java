@@ -254,7 +254,7 @@ public class DoublyLinkedList <T> implements Iterable <T> {
         StringBuilder sb = new StringBuilder();
         sb.append("[");
         for (Node <T> current = head; current != null; current = current.next) {
-            sb.append(current.data.toString()).append(", ");
+            sb.append(current.data).append(", ");
         }
         sb.append("]");
 
