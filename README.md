@@ -1,6 +1,6 @@
-# DSA
+# Data Structures and Algorithms
 
-Data Structures and Algorithms
+I created this repository to store all my implementations for this tutorial. Feel free to take a look and give me your feedback.
 
 ## Static and Dynamic Arrays
 
