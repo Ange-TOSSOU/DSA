@@ -37,9 +37,22 @@ I created this repository to store all my implementations for this tutorial. Fee
 
 ## Stack
 ### Time Complexity
-| Pushing   | `O(1)` |
-| Popping   | `O(1)` |
-| Searching | `O(n)` |
+
+<table style="border-collapse: collapse; text-align: center; border: 1px solid black;">
+    <tr>
+        <td style="border: 1px solid black; padding: 5px">Pushing</td>
+        <td style="border: 1px solid black; padding: 5px">`O(1)`</td>
+    </tr>
+    <tr>
+        <td style="border: 1px solid black; padding: 5px">Popping</td>
+        <td style="border: 1px solid black; padding: 5px">`O(1)`</td>
+    </tr>
+    <tr>
+        <td style="border: 1px solid black; padding: 5px">Searching</td>
+        <td style="border: 1px solid black; padding: 5px">`O(n)`</td>
+    </tr>
+</table>
+
 ### Stack Implementation
 - [Source code][stack_main]
 - [Test code][stack_test]
