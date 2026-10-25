@@ -1,17 +1,19 @@
 package LinkedLists;
 
-public class DoublyLinkedList <T> implements Iterable <T> {
+import java.util.Iterator;
+
+public class DoublyLinkedList<T> implements Iterable<T> {
 
     private int size = 0;
-    private Node <T> head = null;
-    private Node <T> tail = null;
+    private Node<T> head = null;
+    private Node<T> tail = null;
 
     // Internal node class to represent data.
-    private class Node <T> {
+    private static class Node<T> {
         T data;
-        Node <T> prev, next;
+        Node<T> prev, next;
 
-        public Node(T data, Node <T> prev, Node <T> next) {
+        public Node(T data, Node<T> prev, Node<T> next) {
             this.data = data;
             this.prev = prev;
             this.next = next;
@@ -25,8 +27,8 @@ public class DoublyLinkedList <T> implements Iterable <T> {
 
     // Empty this linked list, O(n).
     public void clear() {
-        Node <T> current = head;
-        Node <T> next = null;
+        Node<T> current = head;
+        Node<T> next;
 
         while (current != null) {
             next = current.next;
@@ -48,15 +50,15 @@ public class DoublyLinkedList <T> implements Iterable <T> {
 
     // Is this linked list empty?
     public boolean isEmpty() {
-        return  size() == 0;
+        return size() == 0;
     }
 
     // Add an element to the beginning of this linked list, O(1).
     public void addFirst(T elem) {
         if (isEmpty()) {
-            head = tail = new Node <T> (elem, null, null);
+            head = tail = new Node<>(elem, null, null);
         } else {
-            head.prev = new Node <T> (elem, null, head);
+            head.prev = new Node<>(elem, null, head);
             head = head.prev;
         }
 
@@ -66,9 +68,9 @@ public class DoublyLinkedList <T> implements Iterable <T> {
     // Add a node to the tail of the linked list, O(1).
     public void addLast(T elem) {
         if (isEmpty()) {
-            head = tail = new Node <T> (elem, null, null);
+            head = tail = new Node<>(elem, null, null);
         } else {
-            tail.next = new Node <T> (elem, tail, null);
+            tail.next = new Node<>(elem, tail, null);
             tail = tail.next;
         }
 
@@ -101,7 +103,7 @@ public class DoublyLinkedList <T> implements Iterable <T> {
 
         T data = head.data;
 
-        Node <T> headNext = head.next;
+        Node<T> headNext = head.next;
 
         // Memory clean.
         head.data = null;
@@ -129,7 +131,7 @@ public class DoublyLinkedList <T> implements Iterable <T> {
 
         T data = tail.data;
 
-        Node <T> tailPrev = tail.prev;
+        Node<T> tailPrev = tail.prev;
 
         // Memory clean.
         tail.data = null;
@@ -150,7 +152,7 @@ public class DoublyLinkedList <T> implements Iterable <T> {
     }
 
     // Remove an arbitrary node from the linked list, O(1).
-    private T remove(Node <T> node) {
+    private T remove(Node<T> node) {
         // If th node to remove is somewhere either at the
         // head or the tail handle those independently.
         if (node.prev == null) return removeFirst();
@@ -180,7 +182,7 @@ public class DoublyLinkedList <T> implements Iterable <T> {
             throw new IllegalArgumentException();
         }
 
-        Node <T> node;
+        Node<T> node;
 
         if (index < size / 2) {
             // Search from the front of the list.
@@ -201,7 +203,7 @@ public class DoublyLinkedList <T> implements Iterable <T> {
 
     // Remove a particular value in the linked list, O(n).
     public boolean remove(Object obj) {
-        for (Node <T> node = head; node != null; node = node.next) {
+        for (Node<T> node = head; node != null; node = node.next) {
             if ((node.data == null && obj == null) || (node.data != null && node.data.equals(obj))) {
                 // Element found.
                 remove(node);
@@ -215,7 +217,7 @@ public class DoublyLinkedList <T> implements Iterable <T> {
 
     // Find the index of a particular value in the linked list, O(n).
     public int indexOf(Object obj) {
-        Node <T> node = head;
+        Node<T> node = head;
         for (int index = 0; node != null; node = node.next, index++) {
             if ((node.data == null && obj == null) || (node.data != null && node.data.equals(obj))) {
                 // Element found.
@@ -232,9 +234,10 @@ public class DoublyLinkedList <T> implements Iterable <T> {
         return indexOf(obj) != -1;
     }
 
-    @Override public java.util.Iterator <T> iterator () {
-        return new java.util.Iterator <T> () {
-            private Node <T> current = head;
+    @Override
+    public Iterator<T> iterator() {
+        return new Iterator<>() {
+            private Node<T> current = head;
 
             @Override
             public boolean hasNext() {
@@ -250,10 +253,11 @@ public class DoublyLinkedList <T> implements Iterable <T> {
         };
     }
 
-    @Override public String toString() {
+    @Override
+    public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("[");
-        for (Node <T> current = head; current != null; current = current.next) {
+        for (Node<T> current = head; current != null; current = current.next) {
             sb.append(current.data).append(", ");
         }
         sb.append("]");

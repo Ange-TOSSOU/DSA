@@ -1,11 +1,13 @@
 package Arrays;
 
+import java.util.Iterator;
+
 @SuppressWarnings("unchecked")
 public class DynamicArray<T> implements Iterable<T> {
 
     private T[] array;
-    private int len = 0;      // Length user thinks array is.
-    private int capacity = 0; // Actual array size.
+    private int len = 0;  // Length user thinks array is.
+    private int capacity; // Actual array size.
 
     public DynamicArray() {
         this(16);
@@ -23,6 +25,7 @@ public class DynamicArray<T> implements Iterable<T> {
     public int size() {
         return len;
     }
+
     public boolean isEmpty() {
         return size() == 0;
     }
@@ -34,6 +37,7 @@ public class DynamicArray<T> implements Iterable<T> {
 
         return array[index];
     }
+
     public void set(int index, T elem) {
         if (index >= len || index < 0) {
             throw new IndexOutOfBoundsException();
@@ -113,8 +117,9 @@ public class DynamicArray<T> implements Iterable<T> {
     }
 
     // Iterator is still fast but not as fast as iterative for loop.
-    @Override public java.util.Iterator <T> iterator () {
-        return new java.util.Iterator <T> () {
+    @Override
+    public Iterator<T> iterator() {
+        return new Iterator<>() {
             int index = 0;
 
             @Override
@@ -129,7 +134,8 @@ public class DynamicArray<T> implements Iterable<T> {
         };
     }
 
-    @Override public String toString() {
+    @Override
+    public String toString() {
         if (len == 0) {
             return "[]";
         }

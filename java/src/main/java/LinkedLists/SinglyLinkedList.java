@@ -1,17 +1,19 @@
 package LinkedLists;
 
-public class SinglyLinkedList <T> implements Iterable <T> {
+import java.util.Iterator;
+
+public class SinglyLinkedList<T> implements Iterable<T> {
 
     private int size = 0;
-    private Node <T> head = null;
-    private Node <T> tail = null;
+    private Node<T> head = null;
+    private Node<T> tail = null;
 
     // Internal node class to represent data.
-    private class Node <T> {
+    private static class Node<T> {
         T data;
-        Node <T> next;
+        Node<T> next;
 
-        public Node(T data, Node <T> next) {
+        public Node(T data, Node<T> next) {
             this.data = data;
             this.next = next;
         }
@@ -24,8 +26,8 @@ public class SinglyLinkedList <T> implements Iterable <T> {
 
     // Empty this linked list, O(n).
     public void clear() {
-        Node <T> current = head;
-        Node <T> next;
+        Node<T> current = head;
+        Node<T> next;
 
         while (current != null) {
             next = current.next;
@@ -47,15 +49,15 @@ public class SinglyLinkedList <T> implements Iterable <T> {
 
     // Is this linked list empty?
     public boolean isEmpty() {
-        return  size() == 0;
+        return size() == 0;
     }
 
     // Add an element to the beginning of this linked list, O(1).
     public void addFirst(T elem) {
         if (isEmpty()) {
-            head = tail = new Node <T> (elem, null);
+            head = tail = new Node<>(elem, null);
         } else {
-            head = new Node <T> (elem, head);
+            head = new Node<>(elem, head);
         }
 
         size++;
@@ -64,9 +66,9 @@ public class SinglyLinkedList <T> implements Iterable <T> {
     // Add a node to the tail of the linked list, O(1).
     public void addLast(T elem) {
         if (isEmpty()) {
-            head = tail = new Node <T> (elem, null);
+            head = tail = new Node<>(elem, null);
         } else {
-            tail.next = new Node <T> (elem, null);
+            tail.next = new Node<>(elem, null);
             tail = tail.next;
         }
 
@@ -99,7 +101,7 @@ public class SinglyLinkedList <T> implements Iterable <T> {
 
         T data = head.data;
 
-        Node <T> headNext = head.next;
+        Node<T> headNext = head.next;
 
         // Memory clean.
         head.data = null;
@@ -127,12 +129,12 @@ public class SinglyLinkedList <T> implements Iterable <T> {
         if (index == 0) {
             return removeFirst();
         }
-        Node <T> current = head;
+        Node<T> current = head;
         for (int i = 0; i + 1 != index; i++) {
             current = current.next;
         }
 
-        Node <T> nextNode = current.next;
+        Node<T> nextNode = current.next;
         T data = nextNode.data;
         if (nextNode == tail) tail = current;
 
@@ -164,8 +166,8 @@ public class SinglyLinkedList <T> implements Iterable <T> {
             return true;
         }
 
-        Node <T> nextNode;
-        for (Node <T> current = head; current.next != null; current = current.next) {
+        Node<T> nextNode;
+        for (Node<T> current = head; current.next != null; current = current.next) {
             nextNode = current.next;
             if ((nextNode.data == null && obj == null) || (nextNode.data != null && nextNode.data.equals(obj))) {
                 // Element found.
@@ -189,7 +191,7 @@ public class SinglyLinkedList <T> implements Iterable <T> {
 
     // Find the index of a particular value in the linked list, O(n).
     public int indexOf(Object obj) {
-        Node <T> node = head;
+        Node<T> node = head;
         for (int index = 0; node != null; node = node.next, index++) {
             if ((node.data == null && obj == null) || (node.data != null && node.data.equals(obj))) {
                 // Element found.
@@ -206,9 +208,10 @@ public class SinglyLinkedList <T> implements Iterable <T> {
         return indexOf(obj) != -1;
     }
 
-    @Override public java.util.Iterator <T> iterator () {
-        return new java.util.Iterator <T> () {
-            private Node <T> current = head;
+    @Override
+    public Iterator<T> iterator() {
+        return new Iterator<>() {
+            private Node<T> current = head;
 
             @Override
             public boolean hasNext() {
@@ -224,10 +227,11 @@ public class SinglyLinkedList <T> implements Iterable <T> {
         };
     }
 
-    @Override public String toString() {
+    @Override
+    public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("[");
-        for (Node <T> current = head; current != null; current = current.next) {
+        for (Node<T> current = head; current != null; current = current.next) {
             sb.append(current.data).append(", ");
         }
         sb.append("]");
