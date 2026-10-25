@@ -37,7 +37,6 @@ I created this repository to store all my implementations for this tutorial. Fee
 
 ## Stack
 ### Time Complexity
-| :----:    | :----: |
 | Pushing   | `O(1)` |
 | Popping   | `O(1)` |
 | Searching | `O(n)` |
