@@ -41,21 +41,43 @@ I created this repository to store all my implementations for this tutorial. Fee
 <table style="border-collapse: collapse; text-align: center; border: 1px solid black;">
     <tr>
         <td style="border: 1px solid black; padding: 5px">Pushing</td>
-        <td style="border: 1px solid black; padding: 5px">`O(1)`</td>
+        <td style="border: 1px solid black; padding: 5px"><code>O(1)</code></td>
     </tr>
     <tr>
         <td style="border: 1px solid black; padding: 5px">Popping</td>
-        <td style="border: 1px solid black; padding: 5px">`O(1)`</td>
+        <td style="border: 1px solid black; padding: 5px"><code>O(1)</code></td>
     </tr>
     <tr>
         <td style="border: 1px solid black; padding: 5px">Searching</td>
-        <td style="border: 1px solid black; padding: 5px">`O(n)`</td>
+        <td style="border: 1px solid black; padding: 5px"><code>O(n)</code></td>
     </tr>
 </table>
 
 ### Stack Implementation
 - [Source code][stack_main]
 - [Test code][stack_test]
+
+## Queues
+### Time Complexity
+
+<table style="border-collapse: collapse; text-align: center; border: 1px solid black;">
+    <tr>
+        <td style="border: 1px solid black; padding: 5px">Enqueue</td>
+        <td style="border: 1px solid black; padding: 5px"><code>O(1)</code></td>
+    </tr>
+    <tr>
+        <td style="border: 1px solid black; padding: 5px">Dequeue</td>
+        <td style="border: 1px solid black; padding: 5px"><code>O(1)</code></td>
+    </tr>
+    <tr>
+        <td style="border: 1px solid black; padding: 5px">Searching</td>
+        <td style="border: 1px solid black; padding: 5px"><code>O(n)</code></td>
+    </tr>
+</table>
+
+### Queue Implementation
+- [Source code][queue_main]
+- [Test code][queue_test]
 
 ## Resources
 
@@ -72,3 +94,6 @@ I created this repository to store all my implementations for this tutorial. Fee
 
 [stack_main]: ./java/src/main/java/Stack/
 [stack_test]: ./java/src/test/java/Stack/
+
+[queue_main]: ./java/src/main/java/Queue/
+[queue_test]: ./java/src/test/java/Queue/
