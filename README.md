@@ -35,6 +35,16 @@ I created this repository to store all my implementations for this tutorial. Fee
 - [Sources code][linked_list_main]
 - [Tests code][linked_list_test]
 
+## Stack
+### Time Complexity
+| :----:    | :----: |
+| Pushing   | `O(1)` |
+| Popping   | `O(1)` |
+| Searching | `O(n)` |
+### Stack Implementation
+- [Source code][stack_main]
+- [Test code][stack_test]
+
 ## Resources
 
 - [Data Structures Easy to Advanced Course - Full Tutorial from a Google Engineer][dsa_material_by_william_fiset]
@@ -47,3 +57,6 @@ I created this repository to store all my implementations for this tutorial. Fee
 
 [linked_list_main]: ./java/src/main/java/LinkedLists/
 [linked_list_test]: ./java/src/test/java/LinkedLists/
+
+[stack_main]: ./java/src/main/java/Stack/
+[stack_test]: ./java/src/test/java/Stack/
