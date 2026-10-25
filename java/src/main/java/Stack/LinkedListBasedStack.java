@@ -52,7 +52,7 @@ public class LinkedListBasedStack<T> implements Iterable<T> {
         return list.peekFirst();
     }
 
-    // Allow users to itera through the stack using an iterator.
+    // Allow users to iterate through the stack using an iterator.
     @Override
     public Iterator<T> iterator() {
         return list.iterator();
